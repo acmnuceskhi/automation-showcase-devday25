@@ -5,6 +5,7 @@ import TeamGrid from "./components/TeamGrid";
 import Portfolio from "./components/Portfolio";
 import { motion } from "framer-motion";
 import { categoryOrder } from "./data/teamData";
+import { useEffect } from "react";
 
 // helper for single word titles
 const getSingleWordTitle = (title: string): string => {
@@ -65,6 +66,28 @@ const CategoryNav = () => {
 };
 
 function App() {
+  // Add effect to handle hash navigation on page load
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (window.location.hash) {
+      // Get the element with the id matching the hash
+      const id = window.location.hash.substring(1);
+      let element = document.getElementById(id);
+
+      // Special case for #team since it's a common URL format
+      if (id === "team" && !element) {
+        element = document.getElementById("team-section");
+      }
+
+      // If the element exists, scroll to it
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div className="App">
       <div className="min-h-screen w-full bg-gradient-to-br from-[#141414] to-[#0a0a0a] relative py-6 md:py-10 px-2 md:px-3">
@@ -87,8 +110,8 @@ function App() {
           </div>
 
           {/* Team section */}
-          <div id="team" className="mt-10  ">
-            <h2 className=" font-semibold text-4xl mb-8">
+          <div id="team" className="mt-10">
+            <h2 className="font-semibold text-4xl mb-8">
               Brains Behind Automation
             </h2>
             <TeamGrid />
