@@ -1,5 +1,7 @@
-// Members data organized by categories
-export const teamData = {
+import { TeamMember, CategoryType } from "../types/team";
+
+// Team member data
+export const teamData: Record<string, TeamMember[]> = {
   leads: [
     {
       name: "Asfand Khanzada",
@@ -144,8 +146,8 @@ export const teamData = {
   ],
 };
 
-// Order of rendering for visual hierarchy
-export const categoryOrder = [
+// Category data with ordering information
+export const categoryOrder: CategoryType[] = [
   {
     id: "leads",
     title: "Leads",

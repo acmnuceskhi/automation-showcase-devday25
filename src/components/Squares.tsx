@@ -1,14 +1,20 @@
 import { useRef, useEffect } from "react";
 
+interface SquaresProps {
+  borderColor?: string;
+  squareSize?: number;
+  resetTrigger?: boolean;
+}
+
 const Squares = ({
   borderColor = "#999",
   squareSize = 40,
   resetTrigger = false,
-}) => {
-  const canvasRef = useRef(null);
-  const requestRef = useRef(null);
-  const numSquaresX = useRef(0);
-  const numSquaresY = useRef(0);
+}: SquaresProps) => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const requestRef = useRef<number | null>(null);
+  const numSquaresX = useRef<number>(0);
+  const numSquaresY = useRef<number>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;

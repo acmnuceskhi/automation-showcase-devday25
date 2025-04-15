@@ -1,9 +1,15 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { teamData, categoryOrder } from "../data/teamData";
-import { useState } from "react";
+import { TeamMember } from "../types/team";
 
 // Component to render a single team member card
-const MemberCard = ({ member, level }) => {
+const MemberCard = ({
+  member,
+  level,
+}: {
+  member: TeamMember;
+  level: number;
+}) => {
   // Add different styling based on seniority level
   const getBorderStyles = () => {
     switch (level) {
@@ -58,7 +64,15 @@ const MemberCard = ({ member, level }) => {
 };
 
 // Component to render a category section with its members
-const CategorySection = ({ title, members, level }) => {
+const CategorySection = ({
+  title,
+  members,
+  level,
+}: {
+  title: string;
+  members: TeamMember[];
+  level: number;
+}) => {
   if (!members || members.length === 0) return null;
 
   // All headings now use the same size, only underline color changes
@@ -157,7 +171,7 @@ const CategoryNav = () => {
 };
 
 // Helper function to get single word titles
-const getSingleWordTitle = (title) => {
+const getSingleWordTitle = (title: string): string => {
   switch (title) {
     case "Leads":
       return "Leads";
