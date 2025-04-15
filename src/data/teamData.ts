@@ -9,6 +9,8 @@ export const teamData: Record<string, TeamMember[]> = {
       linkedin: "https://linkedin.com/in/asfandkhanzada",
       github: "https://github.com/asfandkhanzada",
     },
+  ],
+  coleads: [
     {
       name: "Munazzar Shahzad",
       image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Munazzar",
@@ -22,24 +24,24 @@ export const teamData: Record<string, TeamMember[]> = {
       github: "https://github.com/sarimahmed",
     },
   ],
-  coordinators: [
+  executives: [
+    {
+      name: "Hamza Naeem",
+      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Hamza",
+      linkedin: "https://linkedin.com/in/hamzanaeem",
+      github: "https://github.com/hamzanaeem",
+    },
+    {
+      name: "Abdullah Azhar Khan",
+      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Abdullah",
+      linkedin: "https://www.linkedin.com/in/abbbdullah/",
+      github: "https://github.com/abdullahazharkhan",
+    },
     {
       name: "Raahim Irfan",
       image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Raahim",
-      linkedin: "https://linkedin.com/in/raahimirfan",
-      github: "https://github.com/raahimirfan",
-    },
-    {
-      name: "Musab Ali Khan",
-      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Musab",
-      linkedin: "https://linkedin.com/in/musabalikhan",
-      github: "https://github.com/musabalikhan",
-    },
-    {
-      name: "Kinza Afzal",
-      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Kinza",
-      linkedin: "https://linkedin.com/in/kinzaafzal",
-      github: "https://github.com/kinzaafzal",
+      linkedin: "https://linkedin.com/in/raahimirfan100",
+      github: "https://github.com/raahimirfan100",
     },
   ],
   deputies: [
@@ -56,30 +58,16 @@ export const teamData: Record<string, TeamMember[]> = {
       github: "https://github.com/yousufrehan",
     },
     {
-      name: "Muhammad Asim",
-      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Muhammad",
-      linkedin: "https://linkedin.com/in/muhammadasim",
-      github: "https://github.com/muhammadasim",
+      name: "Asim Ali",
+      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Asim",
+      linkedin: "https://www.linkedin.com/in/masimali100/",
+      github: "https://github.com/exit100",
     },
     {
       name: "Abdul Basit",
       image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Basit",
-      linkedin: "https://linkedin.com/in/abdulbasit",
-      github: "https://github.com/abdulbasit",
-    },
-  ],
-  executives: [
-    {
-      name: "Hamza Naeem",
-      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Hamza",
-      linkedin: "https://linkedin.com/in/hamzanaeem",
-      github: "https://github.com/hamzanaeem",
-    },
-    {
-      name: "Abdullah Azhar Khan",
-      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Abdullah",
-      linkedin: "https://linkedin.com/in/abdullahazharkhan",
-      github: "https://github.com/abdullahazharkhan",
+      linkedin: "https://www.linkedin.com/in/connect-abdulbasit/",
+      github: "https://github.com/connect-abdulbasit",
     },
   ],
   members: [
@@ -90,16 +78,17 @@ export const teamData: Record<string, TeamMember[]> = {
       github: "https://github.com/krishkumar",
     },
     {
-      name: "Sibtain Haider",
+      name: "Syed Sibtain Haider",
       image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Sibtain",
-      linkedin: "https://linkedin.com/in/sibtainhaider",
-      github: "https://github.com/sibtainhaider",
+      linkedin:
+        "https://www.linkedin.com/in/syed-sibtain-haider-gardezi-701b0931b",
+      github: "https://github.com/SHtheGreat",
     },
     {
-      name: "Hammad Bhatti",
+      name: "Muhammad Hammad",
       image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Hammad",
-      linkedin: "https://linkedin.com/in/hammadbhatti",
-      github: "https://github.com/hammadbhatti",
+      linkedin: "https://www.linkedin.com/in/muhammad-hammad-bhatti-b6b782296",
+      github: "https://github.com/muhamad-hammad",
     },
     {
       name: "Aehris",
@@ -121,27 +110,39 @@ export const teamData: Record<string, TeamMember[]> = {
     },
     {
       name: "Abdul Rafay Tariq",
-      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Rafay",
+      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=tariq",
       linkedin: "https://linkedin.com/in/abdulrafaytariq",
       github: "https://github.com/abdulrafaytariq",
     },
     {
       name: "Danish Ahmed",
       image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Danish",
-      linkedin: "https://linkedin.com/in/danishahmed",
-      github: "https://github.com/danishahmed",
+      linkedin: "https://www.linkedin.com/in/danish-ahmed-6b46b4343",
+      github: "https://github.com/Danish-Ahmed24",
     },
     {
-      name: "Khadija",
+      name: "Khadija Abbasi",
       image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Khadija",
-      linkedin: "https://linkedin.com/in/khadija",
-      github: "https://github.com/khadija",
+      linkedin: "https://www.linkedin.com/in/khadija-abbasi-574a69262",
+      github: "https://github.com/khadija3096",
     },
     {
       name: "Hatim Mustafa",
       image: "https://api.dicebear.com/7.x/adventurer/svg?seed=Hatim",
       linkedin: "https://linkedin.com/in/hatimmustafa",
       github: "https://github.com/hatimmustafa",
+    },
+    {
+      name: "Muhammad Musab Ali Khan",
+      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=MusabAli",
+      linkedin: "https://www.linkedin.com/in/musab-ali-91958124b",
+      github: "https://github.com/musab285",
+    },
+    {
+      name: "Kinza Afzal",
+      image: "https://api.dicebear.com/7.x/adventurer/svg?seed=KinzaA",
+      linkedin: "https://www.linkedin.com/in/kinza-afzal-15660a2a3",
+      github: "https://github.com/kinza7124",
     },
   ],
 };
@@ -150,22 +151,22 @@ export const teamData: Record<string, TeamMember[]> = {
 export const categoryOrder: CategoryType[] = [
   {
     id: "leads",
-    title: "Leads",
+    title: "Lead",
     level: 1, // Highest level
   },
   {
-    id: "coordinators",
-    title: "Coordinators",
-    level: 2,
-  },
-  {
-    id: "deputies",
-    title: "Deputies",
+    id: "coleads",
+    title: "Co-Leads",
     level: 2,
   },
   {
     id: "executives",
     title: "Executives",
+    level: 3,
+  },
+  {
+    id: "deputies",
+    title: "Deputies",
     level: 3,
   },
   {

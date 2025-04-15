@@ -173,14 +173,14 @@ const CategoryNav = () => {
 // Helper function to get single word titles
 const getSingleWordTitle = (title: string): string => {
   switch (title) {
-    case "Leads":
-      return "Leads";
-    case "Coordinators":
-      return "Coordinators";
-    case "Deputies":
-      return "Deputies";
+    case "Lead":
+      return "Lead";
+    case "Co-Leads":
+      return "Co-Leads";
     case "Executives":
       return "Executives";
+    case "Deputies":
+      return "Deputies";
     case "Members":
       return "Members";
     default:
