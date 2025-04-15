@@ -87,7 +87,7 @@ function App() {
           </div>
 
           {/* Team section */}
-          <div className="mt-10  ">
+          <div id="team" className="mt-10  ">
             <h2 className=" font-semibold text-4xl mb-8">
               Brains Behind Automation
             </h2>
