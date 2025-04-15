@@ -3,7 +3,7 @@ import { teamData, categoryOrder } from "../data/teamData";
 import { TeamMember } from "../types/team";
 import { motion } from "framer-motion";
 
-// Component to render a single team member card
+// component for single team member card
 const MemberCard = ({
   member,
   level,
@@ -13,16 +13,16 @@ const MemberCard = ({
   level: number;
   index: number;
 }) => {
-  // Add different styling based on seniority level
+  // styling based on level
   const getBorderStyles = () => {
     switch (level) {
-      case 1: // Leads - Gold border
+      case 1: // leads - gold
         return "border-4 border-yellow-400/70";
-      case 2: // Coordinators & Deputies - Silver border
+      case 2: // coordinators & deputies - silver
         return "border-4 border-gray-300/70";
-      case 3: // Executives - Bronze border
+      case 3: // executives - bronze
         return "border-4 border-amber-600/70";
-      default: // Members - Brand color border, thinner
+      default: // members - brand color
         return "border-2 border-[#ff33339f]";
     }
   };
@@ -33,8 +33,8 @@ const MemberCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.2 }}
       transition={{
-        duration: 0.4, // Faster animation
-        delay: Math.min(index * 0.04, 0.2), // Reduced and capped delay
+        duration: 0.4, // faster animation
+        delay: Math.min(index * 0.04, 0.2), // reduced and capped delay
         ease: [0.25, 0.1, 0.25, 1],
       }}
       whileHover={{
@@ -59,7 +59,7 @@ const MemberCard = ({
         <h3 className="text-base sm:text-lg md:text-xl font-semibold">
           {member.name}
         </h3>
-        {/* Role display removed */}
+        {/* role display removed */}
       </div>
       <div className="flex gap-4">
         <motion.a
@@ -87,7 +87,7 @@ const MemberCard = ({
   );
 };
 
-// Component to render a category section with its members
+// category section with members
 const CategorySection = ({
   title,
   members,
@@ -99,7 +99,7 @@ const CategorySection = ({
 }) => {
   if (!members || members.length === 0) return null;
 
-  // All headings now use the same size, only underline color changes
+  // same size headings
   const getTitleStyles = () => {
     return "text-2xl font-bold mb-6 text-center relative";
   };
@@ -107,13 +107,13 @@ const CategorySection = ({
   const getUnderlineColor = () => {
     switch (level) {
       case 1:
-        return "bg-yellow-400/70"; // Gold
+        return "bg-yellow-400/70"; // gold
       case 2:
-        return "bg-gray-300/70"; // Silver
+        return "bg-gray-300/70"; // silver
       case 3:
-        return "bg-amber-600/70"; // Bronze
+        return "bg-amber-600/70"; // bronze
       default:
-        return "bg-[#ff33339f]"; // Brand color
+        return "bg-[#ff33339f]"; // brand color
     }
   };
 
@@ -136,7 +136,7 @@ const CategorySection = ({
             transition={{
               duration: 1.0,
               delay: 0.2,
-              ease: [0.22, 1, 0.36, 1], // Custom bezier curve for smoother underline animation
+              ease: [0.22, 1, 0.36, 1], // custom bezier curve for smoother underline animation
             }}
             className={`absolute bottom-0 left-0 h-1 ${getUnderlineColor()} rounded-full`}
           ></motion.span>
@@ -156,68 +156,9 @@ const CategorySection = ({
   );
 };
 
-// New component for category navigation header with improved styling
-const CategoryNav = () => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="hidden md:block w-full mb-6 md:mb-10 sticky top-0 z-10 bg-[#0a0a0a]/90 backdrop-blur-md py-2 px-2 rounded-lg border border-[#ff33339f]"
-    >
-      {/* Desktop horizontal menu */}
-      <div className="flex flex-wrap justify-center gap-2">
-        {categoryOrder.map((category, index) => (
-          <div key={category.id} className="flex items-center">
-            <motion.a
-              whileHover={{ scale: 1.05, color: "#ff33339f" }}
-              whileTap={{ scale: 0.95 }}
-              transition={{
-                duration: 0.25,
-                ease: "easeOut",
-              }}
-              href={`#section-${category.title
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`}
-              className="text-white px-3 py-1 text-base font-semibold whitespace-nowrap"
-            >
-              {getSingleWordTitle(category.title)}
-            </motion.a>
-            {index < categoryOrder.length - 1 && (
-              <span className="text-gray-500 text-sm">|</span>
-            )}
-          </div>
-        ))}
-      </div>
-    </motion.div>
-  );
-};
-
-// Helper function to get single word titles
-const getSingleWordTitle = (title: string): string => {
-  switch (title) {
-    case "Lead":
-      return "Lead";
-    case "Co-Leads":
-      return "Co-Leads";
-    case "Executives":
-      return "Executives";
-    case "Deputies":
-      return "Deputies";
-    case "Members":
-      return "Members";
-    default:
-      return title;
-  }
-};
-
 const TeamGrid = () => {
   return (
     <div className="w-full max-w-[1200px] p-2 md:p-4">
-      <CategoryNav />
       {categoryOrder.map((category) => (
         <CategorySection
           key={category.id}
