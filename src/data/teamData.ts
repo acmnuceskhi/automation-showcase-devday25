@@ -66,6 +66,24 @@ export const teamData: Record<string, TeamMember[]> = {
   ],
   members: [
     {
+      name: "Kinza Afzal",
+      image: "/images/Kinza-Afzal.jpg",
+      linkedin: "https://www.linkedin.com/in/kinza-afzal-15660a2a3",
+      github: "https://github.com/kinza7124",
+    },
+    {
+      name: "M. Musab Ali Khan",
+      image: "/images/Muhammad-Musab-Ali-Khan.jpeg",
+      linkedin: "https://www.linkedin.com/in/musab-ali-91958124b",
+      github: "https://github.com/musab285",
+    },
+    {
+      name: "Khadija Abbasi",
+      image: "/images/blank-profile-picture.jpeg",
+      linkedin: "https://www.linkedin.com/in/khadija-abbasi-574a69262",
+      github: "https://github.com/khadija3096",
+    },
+    {
       name: "Syed Sibtain Haider",
       image: "/images/blank-profile-picture.jpeg",
       linkedin:
@@ -91,29 +109,12 @@ export const teamData: Record<string, TeamMember[]> = {
       github: "https://github.com/Danish-Ahmed24",
     },
     {
-      name: "Khadija Abbasi",
-      image: "/images/blank-profile-picture.jpeg",
-      linkedin: "https://www.linkedin.com/in/khadija-abbasi-574a69262",
-      github: "https://github.com/khadija3096",
-    },
-    {
       name: "Hatim Mustafa",
       image: "/images/Hatim-Mustafa.jpg",
       linkedin: "https://www.linkedin.com/in/hatim-mustafa-8116ba277",
       github: "https://github.com/Hatim-Mustafa",
     },
-    {
-      name: "Muhammad Musab Ali Khan",
-      image: "/images/Muhammad-Musab-Ali-Khan.jpeg",
-      linkedin: "https://www.linkedin.com/in/musab-ali-91958124b",
-      github: "https://github.com/musab285",
-    },
-    {
-      name: "Kinza Afzal",
-      image: "/images/Kinza-Afzal.jpg",
-      linkedin: "https://www.linkedin.com/in/kinza-afzal-15660a2a3",
-      github: "https://github.com/kinza7124",
-    },
+    
   ],
 };
 
