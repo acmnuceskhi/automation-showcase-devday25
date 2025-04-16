@@ -1,4 +1,3 @@
-import { Toaster } from "@/components/ui/sonner";
 import "./App.css";
 import Squares from "./components/Squares";
 import TeamGrid from "./components/TeamGrid";
@@ -116,9 +115,13 @@ function App() {
             </h2>
             <TeamGrid />
           </div>
+
+          {/* Credits section */}
+          <div className="mt-8 text-gray-400 text-sm">
+            <p>Created with ❤️ by Raahim</p>
+          </div>
         </div>
       </div>
-      <Toaster position={"bottom-center"} />
     </div>
   );
 }

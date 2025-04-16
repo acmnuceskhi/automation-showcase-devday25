@@ -42,12 +42,12 @@ const MemberCard = ({
         backgroundColor: "rgba(255, 51, 51, 0.1)",
         transition: { duration: 0.3, ease: "easeOut" },
       }}
-      className="relative z-1 group bg-[#141414]/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 md:p-6 flex flex-col items-center gap-3 md:gap-4"
+      className="relative z-1 group bg-[#141414]/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 md:p-6 flex flex-col items-center gap-3 md:gap-4 shadow-lg shadow-[#ff3333]/10 border border-[#ff3333]/20"
     >
       <motion.div
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className={`w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden ${getBorderStyles()}`}
+        className={`w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden ${getBorderStyles()}`}
       >
         <img
           src={member.image}

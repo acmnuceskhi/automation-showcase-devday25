@@ -9,6 +9,7 @@ import {
   FaNodeJs,
   FaDatabase,
 } from "react-icons/fa";
+import { FaGithub, FaPython } from "react-icons/fa6";
 import { SiExpress, SiMongodb, SiFlutter } from "react-icons/si";
 
 // project config data
@@ -72,28 +73,8 @@ const technologies = [
   { name: "MongoDB", icon: <SiMongodb className="text-3xl text-green-500" /> },
   { name: "NodeJS", icon: <FaNodeJs className="text-3xl text-green-400" /> },
   { name: "Flutter", icon: <SiFlutter className="text-3xl text-blue-300" /> },
-  {
-    name: "REST API",
-    icon: <FaDatabase className="text-3xl text-purple-400" />,
-  },
-  { name: "ReactJS", icon: <FaReact className="text-3xl text-blue-400" /> },
-  { name: "ExpressJS", icon: <SiExpress className="text-3xl text-white" /> },
-  { name: "MongoDB", icon: <SiMongodb className="text-3xl text-green-500" /> },
-  { name: "NodeJS", icon: <FaNodeJs className="text-3xl text-green-400" /> },
-  { name: "Flutter", icon: <SiFlutter className="text-3xl text-blue-300" /> },
-  {
-    name: "REST API",
-    icon: <FaDatabase className="text-3xl text-purple-400" />,
-  },
-  { name: "ReactJS", icon: <FaReact className="text-3xl text-blue-400" /> },
-  { name: "ExpressJS", icon: <SiExpress className="text-3xl text-white" /> },
-  { name: "MongoDB", icon: <SiMongodb className="text-3xl text-green-500" /> },
-  { name: "NodeJS", icon: <FaNodeJs className="text-3xl text-green-400" /> },
-  { name: "Flutter", icon: <SiFlutter className="text-3xl text-blue-300" /> },
-  {
-    name: "REST API",
-    icon: <FaDatabase className="text-3xl text-purple-400" />,
-  },
+  { name: "Python", icon: <FaPython className="text-3xl text-yellow-400" /> },
+  { name: "Git", icon: <FaGithub className="text-3xl text-gray-400" /> },
 ];
 
 // projectcard component - renders project card with animation
