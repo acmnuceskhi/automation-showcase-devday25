@@ -7,7 +7,6 @@ import {
   FaMobileAlt,
   FaReact,
   FaNodeJs,
-  FaDatabase,
 } from "react-icons/fa";
 import { FaGithub, FaPython } from "react-icons/fa6";
 import { SiExpress, SiMongodb, SiFlutter } from "react-icons/si";
