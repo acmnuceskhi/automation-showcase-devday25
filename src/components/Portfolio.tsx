@@ -25,7 +25,8 @@ const projects = [
     icon: <FaCalendarAlt className="text-2xl md:text-3xl" />,
     color: "bg-blue-500/20 border-blue-500/40",
     buttonColor: "bg-blue-500/80 hover:bg-blue-600/90",
-    link: "#attendance",
+    link: "https://attendance.devday25.com",
+    isExternal: true,
   },
   {
     id: 2,
@@ -35,7 +36,8 @@ const projects = [
     icon: <FaCertificate className="text-2xl md:text-3xl" />,
     color: "bg-purple-500/20 border-purple-500/40",
     buttonColor: "bg-purple-500/80 hover:bg-purple-600/90",
-    link: "#certificates",
+    link: "https://attendance.devday25.com",
+    isExternal: true,
   },
   {
     id: 3,
@@ -46,6 +48,7 @@ const projects = [
     color: "bg-green-500/20 border-green-500/40",
     buttonColor: "bg-green-500/80 hover:bg-green-600/90",
     link: "#emails",
+    isInternal: true,
   },
   {
     id: 4,
@@ -55,7 +58,8 @@ const projects = [
     icon: <FaChartBar className="text-2xl md:text-3xl" />,
     color: "bg-amber-500/20 border-amber-500/40",
     buttonColor: "bg-amber-500/80 hover:bg-amber-600/90",
-    link: "#results",
+    link: "https://results.devday25.com",
+    isExternal: true,
   },
   {
     id: 5,
@@ -66,6 +70,7 @@ const projects = [
     color: "bg-red-500/20 border-red-500/40",
     buttonColor: "bg-red-500/80 hover:bg-red-600/90",
     link: "#prportal",
+    isInternal: true,
   },
 ];
 
@@ -150,9 +155,41 @@ const ProjectCard = ({
         <h3 className="text-xl font-semibold text-center">{project.title}</h3>
       </div>
       {/* description */}
-      <div className="h-20 flex items-center">
+      <div className="h-24 flex items-center">
         <p className="text-center text-gray-300">{project.description}</p>
       </div>
+      
+      {/* link button - displayed for all projects for consistent UI */}
+      <motion.div 
+        className="mt-auto"
+        whileHover={project.isExternal ? { scale: 1.05 } : {}}
+        whileTap={project.isExternal ? { scale: 0.95 } : {}}
+      >
+        {project.isExternal ? (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${project.buttonColor} px-6 py-2 rounded-lg font-medium text-white 
+            shadow-lg transition-all duration-300 inline-block`}
+          >
+            View Project
+          </a>
+        ) : (
+          <div
+            className="bg-gray-700/30 px-6 py-2 rounded-lg font-medium text-gray-400 
+            border border-gray-600/40 select-none opacity-70 inline-flex items-center gap-2"
+            title={project.isInternal ? "Internal Tool - Not Publicly Available" : "Coming Soon"}
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+              <path d="M8 11V7C8 4.79086 9.79086 3 12 3V3C14.2091 3 16 4.79086 16 7V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              <circle cx="12" cy="16" r="2" fill="currentColor"/>
+            </svg>
+            {project.isInternal ? "Internal Tool" : "Coming Soon"}
+          </div>
+        )}
+      </motion.div>
     </motion.div>
   );
 };
