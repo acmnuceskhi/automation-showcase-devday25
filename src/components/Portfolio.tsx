@@ -43,7 +43,7 @@ const projects = [
     color: "bg-blue-500/20 border-blue-500/40",
     buttonColor: "bg-blue-500/80 hover:bg-blue-600/90",
     link: "https://attendance.devday25.com",
-    isExternal: true,
+    isInternal: false,
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ const projects = [
     color: "bg-purple-500/20 border-purple-500/40",
     buttonColor: "bg-purple-500/80 hover:bg-purple-600/90",
     link: "https://attendance.devday25.com",
-    isExternal: true,
+    isInternal: false,
   },
   {
     id: 3,
@@ -76,7 +76,7 @@ const projects = [
     color: "bg-amber-500/20 border-amber-500/40",
     buttonColor: "bg-amber-500/80 hover:bg-amber-600/90",
     link: "https://results.devday25.com",
-    isExternal: true,
+    isInternal: false,
   },
   {
     id: 5,
@@ -202,48 +202,44 @@ const ProjectCard = ({
 
       {/* link button - displayed for all projects for consistent UI */}
       <div className="mt-auto relative z-10">
-        {project.isExternal ? (
+        {project.link ? (
           <a
             href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={project.isInternal ? "_self" : "_blank"}
+            rel={project.isInternal ? "" : "noopener noreferrer"}
             onClick={(e) => e.stopPropagation()}
-            className={`${project.buttonColor} px-6 py-2 rounded-lg font-medium text-white 
-            shadow-lg transition-all duration-300 inline-block cursor-pointer`}
+            className={`${
+              project.isInternal
+                ? "bg-gray-700/50 text-gray-300 border border-gray-600/40 hover:bg-gray-700/70"
+                : `${project.buttonColor} text-white`
+            } px-6 py-2 rounded-lg font-medium shadow-lg transition-all duration-300 inline-flex items-center gap-2 cursor-pointer`}
           >
-            View Project
-          </a>
-        ) : project.isInternal ? (
-          <a
-            href={project.link}
-            onClick={(e) => e.stopPropagation()}
-            className={`bg-gray-700/50 px-6 py-2 rounded-lg font-medium text-gray-300 
-            border border-gray-600/40 transition-all duration-300 hover:bg-gray-700/70 inline-flex items-center gap-2 cursor-pointer`}
-          >
-            <svg
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                x="5"
-                y="11"
-                width="14"
-                height="10"
-                rx="2"
-                stroke="currentColor"
-                strokeWidth="1.5"
-              />
-              <path
-                d="M8 11V7C8 4.79086 9.79086 3 12 3V3C14.2091 3 16 4.79086 16 7V11"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-              <circle cx="12" cy="16" r="2" fill="currentColor" />
-            </svg>
-            Internal Tool
+            {project.isInternal && (
+              <svg
+                className="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="5"
+                  y="11"
+                  width="14"
+                  height="10"
+                  rx="2"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                />
+                <path
+                  d="M8 11V7C8 4.79086 9.79086 3 12 3V3C14.2091 3 16 4.79086 16 7V11"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+                <circle cx="12" cy="16" r="2" fill="currentColor" />
+              </svg>
+            )}
+            {project.isInternal ? "Internal Tool" : "View Project"}
           </a>
         ) : (
           <div
