@@ -13,7 +13,24 @@ import {
   FaNpm,
 } from "react-icons/fa";
 import { FaGithub, FaPython } from "react-icons/fa6";
-import { SiExpress, SiMongodb, SiFlutter, SiTypescript, SiVite, SiTailwindcss, SiEslint, SiHeroku, SiVercel, SiJsonwebtokens, SiFramer, SiShadcnui, SiDart, SiGradle, SiJest, SiPandas } from "react-icons/si";
+import {
+  SiExpress,
+  SiMongodb,
+  SiFlutter,
+  SiTypescript,
+  SiVite,
+  SiTailwindcss,
+  SiEslint,
+  SiHeroku,
+  SiVercel,
+  SiJsonwebtokens,
+  SiFramer,
+  SiShadcnui,
+  SiDart,
+  SiGradle,
+  SiJest,
+  SiPandas,
+} from "react-icons/si";
 
 // project config data
 const projects = [
@@ -78,39 +95,63 @@ const projects = [
 const technologies = [
   // Frontend Frameworks & Libraries
   { name: "ReactJS", icon: <FaReact className="text-3xl text-[#61DAFB]" /> },
-  { name: "TypeScript", icon: <SiTypescript className="text-3xl text-[#3178C6]" /> },
+  {
+    name: "TypeScript",
+    icon: <SiTypescript className="text-3xl text-[#3178C6]" />,
+  },
   { name: "Vite", icon: <SiVite className="text-3xl text-[#646CFF]" /> },
-  { name: "Tailwind", icon: <SiTailwindcss className="text-3xl text-[#06B6D4]" /> },
+  {
+    name: "Tailwind",
+    icon: <SiTailwindcss className="text-3xl text-[#06B6D4]" />,
+  },
   { name: "shadcn", icon: <SiShadcnui className="text-3xl text-white" /> },
   { name: "Framer", icon: <SiFramer className="text-3xl text-[#0055FF]" /> },
-  
+
   // Backend & Databases
   { name: "NodeJS", icon: <FaNodeJs className="text-3xl text-[#68D391]" /> },
   { name: "ExpressJS", icon: <SiExpress className="text-3xl text-white" /> },
   { name: "MongoDB", icon: <SiMongodb className="text-3xl text-[#6EE7B7]" /> },
-  { name: "JWT", icon: <SiJsonwebtokens className="text-3xl text-[#000000] bg-white rounded-sm p-[1px]" /> },
-  
+  {
+    name: "JWT",
+    icon: (
+      <SiJsonwebtokens className="text-3xl text-[#000000] bg-white rounded-sm p-[1px]" />
+    ),
+  },
+
   // Mobile & Cross-Platform
   { name: "Flutter", icon: <SiFlutter className="text-3xl text-[#38BDF8]" /> },
   { name: "Dart", icon: <SiDart className="text-3xl text-[#38BDF8]" /> },
-  { name: "Gradle", icon: <SiGradle className="text-3xl text-[#02303A] bg-white p-[2px] rounded-sm" /> },
-  
+  {
+    name: "Gradle",
+    icon: (
+      <SiGradle className="text-3xl text-[#02303A] bg-white p-[2px] rounded-sm" />
+    ),
+  },
+
   // Testing & Package Management
   { name: "Jest", icon: <SiJest className="text-3xl text-[#C21325]" /> },
   { name: "npm", icon: <FaNpm className="text-3xl text-[#CB3837]" /> },
-  
+
   // DevOps & Deployment
   { name: "GitHub", icon: <FaGithub className="text-3xl text-white" /> },
   { name: "Heroku", icon: <SiHeroku className="text-3xl text-[#A78BFA]" /> },
   { name: "Vercel", icon: <SiVercel className="text-3xl text-white" /> },
-  
+
   // Core Languages
   { name: "Python", icon: <FaPython className="text-3xl text-[#60A5FA]" /> },
   { name: "JavaScript", icon: <FaJs className="text-3xl text-[#F7DF1E]" /> },
-  
+
   // CSV Operations in Email Automation
-  { name: "Pandas", icon: <SiPandas className="text-3xl text-[#150458]" style={{ background: 'white', padding: '2px', borderRadius: '2px' }} /> },
-  
+  {
+    name: "Pandas",
+    icon: (
+      <SiPandas
+        className="text-3xl text-[#150458]"
+        style={{ background: "white", padding: "2px", borderRadius: "2px" }}
+      />
+    ),
+  },
+
   // Basic Tech & Tools
   { name: "ESLint", icon: <SiEslint className="text-3xl text-[#A78BFA]" /> },
   { name: "HTML5", icon: <FaHtml5 className="text-3xl text-[#F97316]" /> },
@@ -158,38 +199,85 @@ const ProjectCard = ({
       <div className="h-24 flex items-center">
         <p className="text-center text-gray-300">{project.description}</p>
       </div>
-      
+
       {/* link button - displayed for all projects for consistent UI */}
-      <motion.div 
-        className="mt-auto"
-        whileHover={project.isExternal ? { scale: 1.05 } : {}}
-        whileTap={project.isExternal ? { scale: 0.95 } : {}}
-      >
+      <div className="mt-auto relative z-10">
         {project.isExternal ? (
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className={`${project.buttonColor} px-6 py-2 rounded-lg font-medium text-white 
-            shadow-lg transition-all duration-300 inline-block`}
+            shadow-lg transition-all duration-300 inline-block cursor-pointer`}
           >
             View Project
+          </a>
+        ) : project.isInternal ? (
+          <a
+            href={project.link}
+            onClick={(e) => e.stopPropagation()}
+            className={`bg-gray-700/50 px-6 py-2 rounded-lg font-medium text-gray-300 
+            border border-gray-600/40 transition-all duration-300 hover:bg-gray-700/70 inline-flex items-center gap-2 cursor-pointer`}
+          >
+            <svg
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="5"
+                y="11"
+                width="14"
+                height="10"
+                rx="2"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+              <path
+                d="M8 11V7C8 4.79086 9.79086 3 12 3V3C14.2091 3 16 4.79086 16 7V11"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+              <circle cx="12" cy="16" r="2" fill="currentColor" />
+            </svg>
+            Internal Tool
           </a>
         ) : (
           <div
             className="bg-gray-700/30 px-6 py-2 rounded-lg font-medium text-gray-400 
             border border-gray-600/40 select-none opacity-70 inline-flex items-center gap-2"
-            title={project.isInternal ? "Internal Tool - Not Publicly Available" : "Coming Soon"}
+            title="Coming Soon"
           >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-              <path d="M8 11V7C8 4.79086 9.79086 3 12 3V3C14.2091 3 16 4.79086 16 7V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              <circle cx="12" cy="16" r="2" fill="currentColor"/>
+            <svg
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="5"
+                y="11"
+                width="14"
+                height="10"
+                rx="2"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+              <path
+                d="M8 11V7C8 4.79086 9.79086 3 12 3V3C14.2091 3 16 4.79086 16 7V11"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+              <circle cx="12" cy="16" r="2" fill="currentColor" />
             </svg>
-            {project.isInternal ? "Internal Tool" : "Coming Soon"}
+            Coming Soon
           </div>
         )}
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
@@ -294,7 +382,6 @@ const Portfolio = () => {
             Our automation projects leverage a diverse range of cutting-edge
             technologies to deliver robust and efficient solutions.
           </p>
-
 
           {/* tech stack display */}
           <div className="flex flex-wrap justify-center">
