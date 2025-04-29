@@ -7,9 +7,13 @@ import {
   FaMobileAlt,
   FaReact,
   FaNodeJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaNpm,
 } from "react-icons/fa";
 import { FaGithub, FaPython } from "react-icons/fa6";
-import { SiExpress, SiMongodb, SiFlutter } from "react-icons/si";
+import { SiExpress, SiMongodb, SiFlutter, SiTypescript, SiVite, SiTailwindcss, SiEslint, SiHeroku, SiVercel, SiJsonwebtokens, SiFramer, SiShadcnui, SiDart, SiGradle, SiJest, SiPandas } from "react-icons/si";
 
 // project config data
 const projects = [
@@ -67,13 +71,45 @@ const projects = [
 
 // tech stack config
 const technologies = [
-  { name: "ReactJS", icon: <FaReact className="text-3xl text-blue-400" /> },
+  // Frontend Frameworks & Libraries
+  { name: "ReactJS", icon: <FaReact className="text-3xl text-[#61DAFB]" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-3xl text-[#3178C6]" /> },
+  { name: "Vite", icon: <SiVite className="text-3xl text-[#646CFF]" /> },
+  { name: "Tailwind", icon: <SiTailwindcss className="text-3xl text-[#06B6D4]" /> },
+  { name: "shadcn", icon: <SiShadcnui className="text-3xl text-white" /> },
+  { name: "Framer", icon: <SiFramer className="text-3xl text-[#0055FF]" /> },
+  
+  // Backend & Databases
+  { name: "NodeJS", icon: <FaNodeJs className="text-3xl text-[#68D391]" /> },
   { name: "ExpressJS", icon: <SiExpress className="text-3xl text-white" /> },
-  { name: "MongoDB", icon: <SiMongodb className="text-3xl text-green-500" /> },
-  { name: "NodeJS", icon: <FaNodeJs className="text-3xl text-green-400" /> },
-  { name: "Flutter", icon: <SiFlutter className="text-3xl text-blue-300" /> },
-  { name: "Python", icon: <FaPython className="text-3xl text-yellow-400" /> },
-  { name: "Git", icon: <FaGithub className="text-3xl text-gray-400" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-3xl text-[#6EE7B7]" /> },
+  { name: "JWT", icon: <SiJsonwebtokens className="text-3xl text-[#000000] bg-white rounded-sm p-[1px]" /> },
+  
+  // Mobile & Cross-Platform
+  { name: "Flutter", icon: <SiFlutter className="text-3xl text-[#38BDF8]" /> },
+  { name: "Dart", icon: <SiDart className="text-3xl text-[#38BDF8]" /> },
+  { name: "Gradle", icon: <SiGradle className="text-3xl text-[#02303A] bg-white p-[2px] rounded-sm" /> },
+  
+  // Testing & Package Management
+  { name: "Jest", icon: <SiJest className="text-3xl text-[#C21325]" /> },
+  { name: "npm", icon: <FaNpm className="text-3xl text-[#CB3837]" /> },
+  
+  // DevOps & Deployment
+  { name: "GitHub", icon: <FaGithub className="text-3xl text-white" /> },
+  { name: "Heroku", icon: <SiHeroku className="text-3xl text-[#A78BFA]" /> },
+  { name: "Vercel", icon: <SiVercel className="text-3xl text-white" /> },
+  
+  // Core Languages
+  { name: "Python", icon: <FaPython className="text-3xl text-[#60A5FA]" /> },
+  { name: "JavaScript", icon: <FaJs className="text-3xl text-[#F7DF1E]" /> },
+  
+  // CSV Operations in Email Automation
+  { name: "Pandas", icon: <SiPandas className="text-3xl text-[#150458]" style={{ background: 'white', padding: '2px', borderRadius: '2px' }} /> },
+  
+  // Basic Tech & Tools
+  { name: "ESLint", icon: <SiEslint className="text-3xl text-[#A78BFA]" /> },
+  { name: "HTML5", icon: <FaHtml5 className="text-3xl text-[#F97316]" /> },
+  { name: "CSS3", icon: <FaCss3Alt className="text-3xl text-[#3B82F6]" /> },
 ];
 
 // projectcard component - renders project card with animation
@@ -88,7 +124,7 @@ const ProjectCard = ({
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{
         duration: 0.4,
         delay: Math.min(index * 0.04, 0.2),
@@ -133,7 +169,7 @@ const TechLogo = ({
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: false, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{
         duration: 0.3,
         delay: Math.min(index * 0.05, 0.3),
@@ -142,7 +178,7 @@ const TechLogo = ({
       whileHover={{ scale: 1.15, transition: { duration: 0.2 } }}
       className="flex flex-col items-center justify-center gap-2 p-4"
     >
-      <div className="bg-[#1a1a1a] p-3 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+      <div className="bg-[#25252580] backdrop-blur-sm p-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-[#ffffff10]">
         {tech.icon}
       </div>
       <span className="text-sm text-gray-300">{tech.name}</span>
@@ -222,9 +258,11 @@ const Portfolio = () => {
             technologies to deliver robust and efficient solutions.
           </p>
 
+
+          {/* tech stack display */}
           <div className="flex flex-wrap justify-center">
-            {technologies.map((tech, index) => (
-              <TechLogo key={tech.name} tech={tech} index={index} />
+            {technologies.map((tech, techIndex) => (
+              <TechLogo key={tech.name} tech={tech} index={techIndex} />
             ))}
           </div>
         </motion.div>
